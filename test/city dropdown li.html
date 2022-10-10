@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .city_dropdown {
+            height: 100%;
+            border: 1px solid red;
+
+            position: relative;
+            padding: 6px 10px;
+            margin: 0;
+        }
+
+        .city_list {
+            position: absolute;
+
+            display: none;
+            z-index: 1;
+        }
+
+        .city_list a {
+            text-decoration: none;
+            display: block;
+            padding: 6px 10px;
+        }
+
+        .city_dropdown:hover {
+            background-color: pink;
+        }
+
+        .dropdown:hover .city_list {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <div class="city_dropdown" for="">臺北市</div>
+        <div class="city_list">
+            <a href="#">基隆市</a>
+            <a href="#">臺北市</a>
+            <a href="#">新北市</a>
+            <a href="#">桃園市</a>
+        </div>
+    </div>
+
+    <!-- <form action="">
+            <select name="" id="">
+                <a href="#">基隆市</a>
+                <a href="#" selected>臺北市</a>
+                <a href="#">新北市</a>
+                <a href="#">桃園市</a>
+                <a href="#">新竹縣</a>
+                <a href="#">新竹市</a>
+                <a href="#">苗栗縣</a>
+                <a href="#">臺中市</a>
+                <a href="#">彰化縣</a>
+                <a href="#">南投縣</a>
+                <a href="#">雲林縣</a>
+                <a href="#">嘉義縣</a>
+                <a href="#">嘉義市</a>
+                <a href="#">臺南市</a>
+                <a href="#">高雄市</a>
+                <a href="#">屏東縣</a>
+                <a href="#">宜蘭縣</a>
+                <a href="#">花蓮縣</a>
+                <a href="#">臺東縣</a>
+                <a href="#">澎湖縣</a>
+                <a href="#">金門縣</a>
+                <a href="#">連江縣</a>
+            </select>
+        </form> -->
+</body>
+<!-- source:
+    1. https://www.w3schools.com/css/css_dropdowns.asp
+    2. https://codepen.io/remilaudanski/pen/gbBGyN 
+    3. https://www.w3schools.com/howto/howto_custom_select.asp-->
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        :root {
+            --textcolor: #95759b;
+            --maincolor: #b58d72;
+        }
+
+        .banner {
+            width: 238px;
+            height: 378px;
+            border: 1px solid #f7f7f7;
+            padding: 20px;
+
+            /* display: flex;
+            flex-direction: column;
+            justify-content: first baseline; */
+
+            box-sizing: border-box;
+
+        }
+
+        .weather {
+            height: 120px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 10px;
+            /* border: 1px solid red; */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            position: relative;
+        }
+
+        .temperature {
+            font-size: 1.5rem;
+        }
+
+        .weather_content {
+            font-size: 14px;
+            color: var(--textcolor);
+        }
+
+        .icon-cloud-rain {
+            width: 65px;
+            height: 65px;
+            fill: var(--maincolor);
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 30px;
+            top: -10px;
+        }
+
+        /* img {
+            width: 65px;
+            height: 65px;
+            border: 1px solid #faf;
+
+            position: absolute;
+            right: 20px;
+            top: 0;
+            
+        } */
+
+        .icon-hyperlink-1 {
+            width: 14px;
+            height: 16px;
+            fill: #464645;
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        .icon-facebook,
+        .icon-twitter,
+        .icon-line {
+            width: 14px;
+            height: 16px;
+
+            padding: 1px;
+        }
+
+        .social_media_tag {
+            position: absolute;
+            right: 25px;
+            top: 4px;
+
+            opacity: 0;
+        }
+
+        /* .hyperlink:hover .social_media_tag {
+            display: inline;
+        } */
+
+        .sign_fortune {
+            height: 217px;
+            margin-top: 11px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            position: relative;
+        }
+
+        .link {
+            text-decoration: none;
+        }
+
+        .header {
+            font-size: 1.5rem;
+            color: #464645;
+        }
+
+        .temperature,
+        .maincolor,
+        .sign_color {
+            color: var(--maincolor);
+        }
+
+        .sign {
+            font-size: 14px;
+            line-height: 20px;
+            color: #5a5a5a;
+        }
+
+        .icon-hyperlink-2 {
+            width: 14px;
+            height: 16px;
+            fill: #464645;
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        @keyframes growLeft {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes growRight {
+            0% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="weather">
+            <form action="">
+                <select name="" id="">
+                    <option value="">基隆市</option>
+                    <option value="" selected>臺北市</option>
+                    <option value="">新北市</option>
+                    <option value="">桃園市</option>
+                    <option value="">新竹縣</option>
+                    <option value="">新竹市</option>
+                    <option value="">苗栗縣</option>
+                    <option value="">臺中市</option>
+                    <option value="">彰化縣</option>
+                    <option value="">南投縣</option>
+                    <option value="">雲林縣</option>
+                    <option value="">嘉義縣</option>
+                    <option value="">嘉義市</option>
+                    <option value="">臺南市</option>
+                    <option value="">高雄市</option>
+                    <option value="">屏東縣</option>
+                    <option value="">宜蘭縣</option>
+                    <option value="">花蓮縣</option>
+                    <option value="">臺東縣</option>
+                    <option value="">澎湖縣</option>
+                    <option value="">金門縣</option>
+                    <option value="">連江縣</option>
+                </select>
+            </form>
+            <p class="temperature">27-35°C</p>
+            <p class="weather_content">天空開始滴滴答答，就是可愛的雨具登場的時刻，可別讓心情發霉啦！</p>
+            <!-- <img src="https://www.niusnews.com/images/v5/svg/rain.svg" alt=""> -->
+            <svg class="icon-cloud-rain">
+                <use xlink:href="images/icomoon/symbol-defs.svg#icon-cloud-rain"></use>
+            </svg>
+            <div class="hyperlink">
+                <svg class="icon-hyperlink-1" id="icon-hyperlink-2">
+                    <use xlink:href="images/icomoon (1)/symbol-defs.svg#icon-hyperlink"></use>
+                </svg>
+
+                <div class="social_media_tag" id="social_media_tag">
+                    <a class="link"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.niusnews.com%2F">
+                        <svg class="icon-facebook">
+                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="link"
+                        href="https://twitter.com/intent/tweet?text=%E5%A6%9E%E6%96%B0%E8%81%9E%20niusnews%EF%BD%9C%E5%A5%B3%E5%AD%A9%E7%9A%84%E5%BF%83%E5%8B%95%E7%99%BC%E7%8F%BE&url=https%3A%2F%2Fwww.niusnews.com%2F">
+                        <svg class="icon-twitter">
+                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="link"
+                        href="https://access.line.me/oauth2/v2.1/login?loginState=aIKd7raWyru5avATNmOB7i&loginChannelId=1446101138&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dopenid%2Bprofile%2Bfriends%2Bgroups%2Btimeline.post%2Bmessage.write%26response_type%3Dcode%26state%3D7eac5d58cb4be3dba6a15420344563%26redirect_uri%3Dhttps%253A%252F%252Fsocial-plugins.line.me%252Flineit%252FloginCallback%253FreturnUrl%253Dhttps%25253A%25252F%25252Fsocial-plugins.line.me%25252Flineit%25252Fshare%25253Furl%25253Dhttps%2525253A%2525252F%2525252Fwww.niusnews.com%2525252F%26client_id%3D1446101138#/">
+                        <svg class="icon-line">
+                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-line"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="sign_fortune">
+            <p><a class="link maincolor" href="">星座&運勢</a></p>
+            <p><a class="link header" href="https://www.niusnews.com/=P3ii2fi82">8/13星座點點名：巨蟹出遠門會遇到有趣的事。每日星座進化2.0</a>
+            </p>
+            <div class="sign">
+                <p> <span class="sign_color">Top1</span> 巨蟹座</p>
+                <p> <span class="sign_color">Top2</span> 金牛座</p>
+                <p> <span class="sign_color">Top3</span> 天蠍座</p>
+            </div>
+            <div class="hyperlink">
+                <svg class="icon-hyperlink-2" id="icon-hyperlink-2">
+                    <use xlink:href="images/icomoon (1)/symbol-defs.svg#icon-hyperlink"></use>
+                </svg>
+
+                <div class="social_media_tag" id="social_media_tag">
+                    <a class="link"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.niusnews.com%2F">
+                        <svg class="icon-facebook">
+                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-facebook"></use>
+                        </svg>
+                    </a>
+                    <a class="link"
+                        href="https://twitter.com/intent/tweet?text=%E5%A6%9E%E6%96%B0%E8%81%9E%20niusnews%EF%BD%9C%E5%A5%B3%E5%AD%A9%E7%9A%84%E5%BF%83%E5%8B%95%E7%99%BC%E7%8F%BE&url=https%3A%2F%2Fwww.niusnews.com%2F">
+                        <svg class="icon-twitter">
+                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-twitter"></use>
+                        </svg>
+                    </a>
+                    <a class="link"
+                        href="https://access.line.me/oauth2/v2.1/login?loginState=aIKd7raWyru5avATNmOB7i&loginChannelId=1446101138&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dopenid%2Bprofile%2Bfriends%2Bgroups%2Btimeline.post%2Bmessage.write%26response_type%3Dcode%26state%3D7eac5d58cb4be3dba6a15420344563%26redirect_uri%3Dhttps%253A%252F%252Fsocial-plugins.line.me%252Flineit%252FloginCallback%253FreturnUrl%253Dhttps%25253A%25252F%25252Fsocial-plugins.line.me%25252Flineit%25252Fshare%25253Furl%25253Dhttps%2525253A%2525252F%2525252Fwww.niusnews.com%2525252F%26client_id%3D1446101138#/">
+                        <svg class="icon-line">
+                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-line"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hyperlink_2 = document.getElementById('icon-hyperlink-2');
+        const social_media_tag = document.getElementById('social_media_tag');
+
+        hyperlink_2.addEventListener('mouseover', function () {
+            social_media_tag.style.animation = 'growLeft 1000ms ease-in-out forwards';
+            social_media_tag.style.transformOrigin = 'right center';
+        })
+
+        hyperlink_2.addEventListener('mouseout', function () {
+            social_media_tag.style.animation = 'growRight 1000ms ease-in-out forwards';
+            social_media_tag.style.transformOrigin = 'right center';
+        })
+    </script>
+</body>
+<!-- source: https://www.niusnews.com/ -->
+<!-- source: https://www.uj5u.com/qianduan/229472.html -->
+<!-- https://hsuchihting.github.io/css/20200713/3105415432/ -->
+
+</html>

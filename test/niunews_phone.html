@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ---------- all ------------*/
+
+        :root {
+            --fontcolor: #565656;
+            --maincolor: #F5B8B8;
+            --writercolor: #C3BDB9;
+            --basicinfocolor: #b58d72;
+        }
+
+        * {
+            box-sizing: border-box;
+            text-decoration: none;
+            /* color: var(--fontcolor); */
+        }
+
+        .container {
+            width: 375px;
+            /* border: 1px solid red; */
+
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        /* ---------- landing_left ------------*/
+
+        .landing_left {
+            width: calc(375px - 39px);
+            /* border: 1px solid green; */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* ----- logo -----*/
+
+        .logo {
+            width: calc(375px - 39px);
+            height: 61.5px;
+            background-color: #fff;
+            /* border: 1px solid pink; */
+
+            position: fixed;
+            margin: auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img_logo {
+            margin-top: -40px;
+        }
+
+        .heart {
+            width: 30px;
+            height: 30px;
+            margin-right: -6px;
+        }
+
+        .niunews_logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: -2px;
+        }
+
+        /* ----- content -----*/
+
+        .content {
+            /* border: 1px solid orange; */
+            overflow: auto;
+
+            margin-top: 61.5px;
+        }
+
+        .content::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* --- banner ---*/
+
+        /* .banner {
+            border: 1px solid green;
+        } */
+
+        .banner_image {
+            height: 175.31px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .banner_text_out {
+            margin: 15px 15px;
+        }
+
+        .banner_text {
+            font-size: 1.5rem;
+            color: var(--fontcolor);
+            font-weight: 300;
+            line-height: 30px;
+        }
+
+        /* --- arrow ---*/
+
+        .arrow_all {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -15px;
+        }
+
+        .arrow_left,
+        .arrow_right {
+            width: 31px;
+            height: 10px;
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        /* ---------- latest_news ------------*/
+
+        .news_text {
+            font-size: 24px;
+            color: var(--fontcolor);
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .news_blink {
+            animation: blink-animation 1s steps(2, start) infinite;
+        }
+
+        @keyframes blink-animation {
+            to {
+                visibility: hidden;
+            }
+
+        }
+
+        /* ---------- brand_news ------------*/
+
+        .col {
+            border-bottom: 1px solid #ECECEC;
+            margin: 15px 15px;
+        }
+
+        .col:last-of-type {
+            border-bottom: none;
+
+        }
+
+        .brand_image {
+            width: 100%;
+            margin-bottom: -8px;
+            overflow: hidden;
+        }
+
+        .col:hover img {
+            transform: scale(1.2);
+        }
+
+        .brand_info {
+            margin: 15px 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ma-size {
+            margin: 5px 0;
+        }
+
+        .brand_text {
+            font-size: 19.2px;
+            color: var(--fontcolor);
+            line-height: 25px;
+
+        }
+
+        .writer {
+            font-size: 12px;
+            color: var(--writercolor);
+
+        }
+
+        .category {
+            font-size: 15px;
+            color: var(--maincolor);
+        }
+
+        /* ---------- yt_lab ------------*/
+
+        .yt_lab {
+            margin: 20px 15px;
+        }
+
+        .niu_youtube_out {
+            background: linear-gradient(rgba(247, 194, 194, 0.759), rgba(247, 194, 194, 0.6)), url(images/lili.webp) no-repeat;
+
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            margin-bottom: 40px;
+            padding: 40px;
+            /* border: 1px solid red; */
+
+            /* https://css-tricks.com/snippets/css/keyframe-animation-syntax/ */
+        }
+
+        .yt_header {
+            font-size: 2.5rem;
+            color: white;
+            padding-bottom: 15px;
+        }
+
+        .niu_youtube {
+            padding-top: 50px;
+
+        }
+
+        .yt_text {
+            color: white;
+            font-size: 15px;
+        }
+
+        .yt_follow {
+            border-top: 1px solid white;
+            border-right: 1px solid white;
+            padding: 10px 5px 0 0;
+            position: relative;
+            transition: 5s;
+        }
+
+        /* check animaiton here */
+
+        .niu_lab {
+            height: 250px;
+        }
+
+        /* ---------- basic_info ------------*/
+        .basic_info {
+            /* width: 238px;
+            height: 378px; */
+            border: 2px solid #f7f7f7;
+            padding: 20px;
+            margin: 15px 15px;
+
+            /* display: flex;
+            flex-direction: column;
+            justify-content: first baseline; */
+
+            box-sizing: border-box;
+
+        }
+
+        .weather {
+            height: 120px;
+            border-bottom: 1px solid #e8e8e8;
+            padding-bottom: 10px;
+            /* border: 1px solid red; */
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            position: relative;
+        }
+
+        .temperature {
+            font-size: 1.5rem;
+        }
+
+        .weather_content {
+            font-size: 14px;
+            color: var(--textcolor);
+        }
+
+        .icon-cloud-rain {
+            width: 65px;
+            height: 65px;
+            fill: var(--basicinfocolor);
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 30px;
+            top: -10px;
+        }
+
+        /* img {
+            width: 65px;
+            height: 65px;
+            border: 1px solid #faf;
+
+            position: absolute;
+            right: 20px;
+            top: 0;
+            
+        } */
+
+        .icon-hyperlink-1 {
+            width: 14px;
+            height: 16px;
+            fill: #464645;
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        .icon-facebook,
+        .icon-twitter,
+        .icon-line {
+            width: 14px;
+            height: 16px;
+
+            padding: 1px;
+        }
+
+        .social_media_tag {
+            position: absolute;
+            right: 25px;
+            top: 4px;
+
+            opacity: 0;
+        }
+
+        /* .hyperlink:hover .social_media_tag {
+            display: inline;
+        } */
+
+        .sign_fortune {
+            height: 217px;
+            margin-top: 11px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            position: relative;
+        }
+
+        .link {
+            text-decoration: none;
+        }
+
+        .header {
+            font-size: 1.5rem;
+            color: #464645;
+        }
+
+        .temperature,
+        .maincolor,
+        .sign_color {
+            color: var(--basicinfocolor);
+        }
+
+        .sign {
+            font-size: 14px;
+            line-height: 20px;
+            color: #5a5a5a;
+        }
+
+        .icon-hyperlink-2 {
+            width: 14px;
+            height: 16px;
+            fill: #464645;
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        @keyframes growLeft {
+            0% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes growRight {
+            0% {
+                opacity: 1;
+                transform: scaleX(1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+        }
+
+        /* ---------- follow_us ------------*/
+
+        .follow_us {
+            display: flex;
+        }
+
+        .follow_icon {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin-left: -15px;
+        }
+
+        .follow_size {
+            width: 20px;
+            height: 20px;
+            padding: 0 2px;
+        }
+
+        .follow_size_line {
+            width: 40px;
+            height: 20px;
+        }
+
+        /* ---------- footer_info ------------*/
+
+        .footer_info {
+            background-color: #FFE9E9;
+        }
+
+        .footer_text {
+            font-size: 14px;
+            color: var(--fontcolor);
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .footer_email {
+            background-color: #FFE9E9;
+        }
+
+        .footer_btn {
+            background-color: #FFE9E9;
+        }
+
+        /* ---------- landing_right ------------*/
+
+        /* ---------- nav ------------*/
+
+        .nav {
+            width: 39px;
+            height: 100vh;
+            padding: 10px 10px;
+            border-left: 1px solid #CDCECD;
+
+            position: fixed;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav_top {
+            margin-bottom: -100px;
+        }
+
+
+        .fa-solid,
+        .fa-regular {
+            font-size: 20px;
+            color: #3F3F3F;
+
+            padding: 10px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="landing_left">
+            <div class="logo">
+                <div class="img_logo">
+                    <img class="heart" src="https://assets.niusnews.com/logo/logo-2021.gif" alt="">
+                    <img class="niunews_logo" src="images/logo.png" alt="">
+                </div>
+            </div>
+            <div class="content">
+                <div class="banner">
+                    <div class="banner_image">
+                        <a
+                            href="https://www.niusnews.com/niusselect/product/69?utm_source=webhomepage&utm_medium=BN0826&utm_campaign=2022pineapplecakes">
+                            <img src="images/banner.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="banner_text_out">
+                        <a class="banner_text"
+                            href="https://www.niusnews.com/niusselect/product/69?utm_source=webhomepage&utm_medium=BN0826&utm_campaign=2022pineapplecakes">即將完售！錯過再等明年～中秋最強伴手
+                            鳳梨酥鳳幻盒 搶 最後數量
+                        </a>
+                    </div>
+                </div>
+                <div class="arrow_all">
+                    <div class="arrow_left">
+                        <img src="images/arrow-left.svg" alt="">
+                    </div>
+                    <div class="arrow_right">
+                        <img src="images/arrow-right.svg" alt="">
+                    </div>
+                </div>
+                <div class="content_left1">
+                    <div class="latest_news">
+                        <div class="news_text">latest news <span class="news_blink">_</span></div>
+                    </div>
+                    <div class="brand_news">
+                        <div class="col">
+                            <div class="brand_image">
+                                <a href="https://www.niusnews.com/=P03ah3hl9">
+                                    <img src="images/cosmetics.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="brand_info">
+                                <div class="brand_text_out ma-size">
+                                    <a class="brand_text"
+                                        href="https://www.niusnews.com/=P03ah3hl9">2022秋冬限定「專櫃眼影」整理！彩妝師盈喬解析時髦玩色畫法，大推「香菜綠」必收
+                                    </a>
+                                </div>
+                                <p class="ma-size">
+                                    <a class="writer" href="https://www.niusnews.com/author/248653">by Copi</a>
+                                </p>
+                                <p class="ma-size">
+                                    <a class="category" href="https://www.niusnews.com/channel/entertainment/185">
+                                        <span>Charming</span> <span>美人計</span><a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand_image">
+                                <a href="https://www.niusnews.com/=P2z7yz7y4">
+                                    <img src="images/dogs.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="brand_info">
+                                <div class="brand_text_out ma-size">
+                                    <a class="brand_text"
+                                        href="https://www.niusnews.com/=P2z7yz7y4">2022最新！全台5家「寵物旅行社」推薦，狗友旅行團、包車套裝行程都在這
+                                    </a>
+                                </div>
+                                <p class="ma-size">
+                                    <a class="writer" href="https://www.niusnews.com/author/478800">by 菌菌</a>
+                                </p>
+                                <p class="ma-size">
+                                    <a class="category" href="https://www.niusnews.com/channel/pets/179"> <span>Pets
+                                            Play</span> <span>寵物出去玩</span><a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="brand_image">
+                                <a href="https://www.niusnews.com/=P3ii22102">
+                                    <img src="images/calendar.webp" alt="">
+                                </a>
+                            </div>
+                            <div class="brand_info">
+                                <div class="brand_text_out ma-size">
+                                    <a class="brand_text"
+                                        href="https://www.niusnews.com/=P3ii22102">21款2023日曆懶人包！《日日有影》電影日曆質感滿分、貓奴必收貓日曆｜持續更新
+                                    </a>
+                                </div>
+                                <p class="ma-size">
+                                    <a class="writer" href="https://www.niusnews.com/author/434118">by Haru</a>
+                                </p>
+                                <p class="ma-size">
+                                    <a class="category" href="https://www.niusnews.com/channel/entertainment/185">
+                                        <span>Study</span> <span>妞書房</span><a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_right1">
+                    <div class="yt_lab">
+                        <div class="niu_youtube_out">
+                            <p class="yt_header">妞's youtube</p>
+                            <p class="yt_text">給你新鮮妞影音！</p>
+                            <div class="niu_youtube"><a class="yt_text yt_follow"
+                                    href="https://www.youtube.com/channel/UCa6UUZOQ2RnuwgTaxnwLwIw">前往追頻 >></a></div>
+                        </div>
+                        <div class="niu_lab"><a href="https://www.niusnews.com/lab"><img src="images\lab-banner.webp"
+                                    alt=""></a></div>
+                    </div>
+                    <div class="basic_info">
+                        <div class="weather">
+                            <form action="">
+                                <select name="" id="">
+                                    <option value="">基隆市</option>
+                                    <option value="" selected>臺北市</option>
+                                    <option value="">新北市</option>
+                                    <option value="">桃園市</option>
+                                    <option value="">新竹縣</option>
+                                    <option value="">新竹市</option>
+                                    <option value="">苗栗縣</option>
+                                    <option value="">臺中市</option>
+                                    <option value="">彰化縣</option>
+                                    <option value="">南投縣</option>
+                                    <option value="">雲林縣</option>
+                                    <option value="">嘉義縣</option>
+                                    <option value="">嘉義市</option>
+                                    <option value="">臺南市</option>
+                                    <option value="">高雄市</option>
+                                    <option value="">屏東縣</option>
+                                    <option value="">宜蘭縣</option>
+                                    <option value="">花蓮縣</option>
+                                    <option value="">臺東縣</option>
+                                    <option value="">澎湖縣</option>
+                                    <option value="">金門縣</option>
+                                    <option value="">連江縣</option>
+                                </select>
+                            </form>
+                            <p class="temperature">27-35°C</p>
+                            <p class="weather_content">天空開始滴滴答答，就是可愛的雨具登場的時刻，可別讓心情發霉啦！</p>
+                            <!-- <img src="https://www.niusnews.com/images/v5/svg/rain.svg" alt=""> -->
+                            <svg class="icon-cloud-rain">
+                                <use xlink:href="images/icomoon/symbol-defs.svg#icon-cloud-rain"></use>
+                            </svg>
+                            <div class="hyperlink">
+                                <svg class="icon-hyperlink-1" id="icon-hyperlink-1">
+                                    <use xlink:href="images/icomoon (1)/symbol-defs.svg#icon-hyperlink"></use>
+                                </svg>
+
+                                <div class="social_media_tag" id="social_media_tag1">
+                                    <a class="link"
+                                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.niusnews.com%2F">
+                                        <svg class="icon-facebook">
+                                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-facebook"></use>
+                                        </svg>
+                                    </a>
+                                    <a class="link"
+                                        href="https://twitter.com/intent/tweet?text=%E5%A6%9E%E6%96%B0%E8%81%9E%20niusnews%EF%BD%9C%E5%A5%B3%E5%AD%A9%E7%9A%84%E5%BF%83%E5%8B%95%E7%99%BC%E7%8F%BE&url=https%3A%2F%2Fwww.niusnews.com%2F">
+                                        <svg class="icon-twitter">
+                                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-twitter"></use>
+                                        </svg>
+                                    </a>
+                                    <a class="link"
+                                        href="https://access.line.me/oauth2/v2.1/login?loginState=aIKd7raWyru5avATNmOB7i&loginChannelId=1446101138&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dopenid%2Bprofile%2Bfriends%2Bgroups%2Btimeline.post%2Bmessage.write%26response_type%3Dcode%26state%3D7eac5d58cb4be3dba6a15420344563%26redirect_uri%3Dhttps%253A%252F%252Fsocial-plugins.line.me%252Flineit%252FloginCallback%253FreturnUrl%253Dhttps%25253A%25252F%25252Fsocial-plugins.line.me%25252Flineit%25252Fshare%25253Furl%25253Dhttps%2525253A%2525252F%2525252Fwww.niusnews.com%2525252F%26client_id%3D1446101138#/">
+                                        <svg class="icon-line">
+                                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-line"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="sign_fortune">
+                            <p><a class="link maincolor" href="">星座&運勢</a></p>
+                            <p><a class="link header"
+                                    href="https://www.niusnews.com/=P3ii2fi82">8/13星座點點名：巨蟹出遠門會遇到有趣的事。每日星座進化2.0</a>
+                            </p>
+                            <div class="sign">
+                                <p> <span class="sign_color">Top1</span> 巨蟹座</p>
+                                <p> <span class="sign_color">Top2</span> 金牛座</p>
+                                <p> <span class="sign_color">Top3</span> 天蠍座</p>
+                            </div>
+                            <div class="hyperlink">
+                                <svg class="icon-hyperlink-2" id="icon-hyperlink-2">
+                                    <use xlink:href="images/icomoon (1)/symbol-defs.svg#icon-hyperlink"></use>
+                                </svg>
+
+                                <div class="social_media_tag" id="social_media_tag2">
+                                    <a class="link"
+                                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.niusnews.com%2F">
+                                        <svg class="icon-facebook">
+                                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-facebook"></use>
+                                        </svg>
+                                    </a>
+                                    <a class="link"
+                                        href="https://twitter.com/intent/tweet?text=%E5%A6%9E%E6%96%B0%E8%81%9E%20niusnews%EF%BD%9C%E5%A5%B3%E5%AD%A9%E7%9A%84%E5%BF%83%E5%8B%95%E7%99%BC%E7%8F%BE&url=https%3A%2F%2Fwww.niusnews.com%2F">
+                                        <svg class="icon-twitter">
+                                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-twitter"></use>
+                                        </svg>
+                                    </a>
+                                    <a class="link"
+                                        href="https://access.line.me/oauth2/v2.1/login?loginState=aIKd7raWyru5avATNmOB7i&loginChannelId=1446101138&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dopenid%2Bprofile%2Bfriends%2Bgroups%2Btimeline.post%2Bmessage.write%26response_type%3Dcode%26state%3D7eac5d58cb4be3dba6a15420344563%26redirect_uri%3Dhttps%253A%252F%252Fsocial-plugins.line.me%252Flineit%252FloginCallback%253FreturnUrl%253Dhttps%25253A%25252F%25252Fsocial-plugins.line.me%25252Flineit%25252Fshare%25253Furl%25253Dhttps%2525253A%2525252F%2525252Fwww.niusnews.com%2525252F%26client_id%3D1446101138#/">
+                                        <svg class="icon-line">
+                                            <use xlink:href="images/icomoon (2)/symbol-defs.svg#icon-line"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="follow_us">
+                        <div class="news_text">Follow Us <span class="news_blink">_</span></div>
+                        <div class="follow_icon">
+                            <div class="follow_size"><a href="https://www.facebook.com/niusnews"><img
+                                        src="images/footer_facebook.png" alt=""></a>
+                            </div>
+                            <div class="follow_size"><a href="https://www.instagram.com/niusnews/"><img
+                                        src="images/footer_ig.png" alt=""></a>
+                            </div>
+                            <div class="follow_size"><a
+                                    href="https://www.youtube.com/channel/UCa6UUZOQ2RnuwgTaxnwLwIw"><img
+                                        src="images/footer_yt.png" alt=""></a>
+                            </div>
+                            <div class="follow_size_line"><a href="https://page.line.me/niusnews?openQrModal=true"><img
+                                        src="images/footer_line.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <div>
+                            <p class="footer_text">service4n@niusnews.com</p>
+                            <p class="footer_text">105 台北市松山區復興北路143號11樓</p>
+                            <p class="footer_text">@2022 niusnews</p>
+                        </div>
+                        <div>
+                            <a class="footer_text" href="https://www.niusnews.com/">關於我們</a>
+                            <a class="footer_text" href="https://www.niusnews.com/=P2ijsj68">加入團隊</a>
+                        </div>
+                        <div>
+                            <a class="footer_text" href="https://www.niusnews.com/=P1c9bbn6">題材投稿</a>
+                            <a class="footer_text" href="https://www.niusnews.com/=P1xdony5">廣告洽談</a>
+                            <a class="footer_text" href="https://www.niusnews.com/=P1rcnmd4">異業合作</a>
+                        </div>
+                        <div>
+                            <a class="footer_text" href="https://www.niusnews.com/=P0lna349">服務條款</a>
+                            <a class="footer_text" href="https://www.niusnews.com/">網站地圖</a>
+                        </div>
+                        <div>
+                            <input type="text" class="footer_email footer_text" value="Enter Your Mail Here">
+                            <button class="footer_btn footer_text">GO GO!</button>
+                        </div>
+                        <div class="footer_text">天天妞一下，天天好心情 <i class="fa-solid fa-heart"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="landing_right">
+            <div class="nav">
+                <div class="nav_top">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="nav_middle">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <i class="fa-regular fa-circle-play"></i>
+                    <i class="fa-solid fa-book"></i>
+                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <div class="nav_bottom">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hyperlink_1 = document.getElementById('icon-hyperlink-1');
+        const social_media_tag1 = document.getElementById('social_media_tag1');
+
+        hyperlink_1.addEventListener('mouseover', function () {
+            social_media_tag1.style.animation = 'growLeft 1000ms ease-in-out forwards';
+            social_media_tag1.style.transformOrigin = 'right center';
+        })
+
+        hyperlink_1.addEventListener('mouseout', function () {
+            social_media_tag1.style.animation = 'growRight 1000ms ease-in-out forwards';
+            social_media_tag1.style.transformOrigin = 'right center';
+        })
+
+        const hyperlink_2 = document.getElementById('icon-hyperlink-2');
+        const social_media_tag = document.getElementById('social_media_tag2');
+
+        hyperlink_2.addEventListener('mouseover', function () {
+            social_media_tag.style.animation = 'growLeft 1000ms ease-in-out forwards';
+            social_media_tag.style.transformOrigin = 'right center';
+        })
+
+        hyperlink_2.addEventListener('mouseout', function () {
+            social_media_tag.style.animation = 'growRight 1000ms ease-in-out forwards';
+            social_media_tag.style.transformOrigin = 'right center';
+        })
+    </script>
+
+    <!-- 
+    source:
+
+    1. https://www.astralweb.com.tw/pure-css-drop-down-menu/
+    2. https://codepen.io/codypearce/pen/PdBXpj
+    3. reasons of last-child is not working: https://www.oxxostudio.tw/articles/201405/css-selector.html
+    4. blink: https://www.w3docs.com/tools/code-editor/13719
+    -->
+</body>
+
+</html>

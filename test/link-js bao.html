@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sign_fortune {
+            height: 217px;
+            margin-top: 11px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            position: relative;
+        }
+
+        .link {
+            text-decoration: none;
+        }
+
+        .icon-hyperlink-2 {
+            width: 14px;
+            height: 16px;
+            fill: #464645;
+            /* border: 1px solid #faf; */
+
+            position: absolute;
+            right: 5px;
+            top: 5px;
+        }
+
+        .icon-facebook,
+        .icon-twitter,
+        .icon-line {
+            width: 14px;
+            height: 16px;
+
+            padding: 1px;
+        }
+
+        .social_media {
+            position: absolute;
+            right: 25px;
+            top: 4px;
+
+            opacity: 0;
+            /* transition: opacity 0.3s; */
+
+            /* animation: growLeft;
+            animation-direction: alternate-reverse; */
+
+
+            /* display: none; */
+        }
+
+        .show {
+            /* display: inline; */
+            opacity: 1;
+            animation: growLeft 600ms ease-in-out forwards;
+            transform-origin: right center;
+            /* transition: opacity 0.3s; */
+        }
+
+        @keyframes growLeft {
+            0% {
+                transform: scaleX(0);
+            }
+
+            50% {
+                transform: scaleX(1.1);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+
+        .hide {
+            /* display: inline; */
+            opacity: 1;
+            animation: growRight 600ms ease-in-out forwards;
+            transform-origin: right center;
+            /* transition: opacity 0.3s; */
+        }
+
+        @keyframes growRight {
+            0% {
+                transform: scaleX(1);
+            }
+
+            50% {
+                transform: scaleX(1.1);
+            }
+
+            100% {
+                transform: scaleX(0);
+            }
+        }
+    </style>
+    <script>
+        function show1() {
+            console.log("show")
+            var element = document.getElementById("social_media");
+            element.classList.remove("hide");
+            element.classList.add("show");
+        }
+        function hide1() {
+            console.log("hide")
+            var element = document.getElementById("social_media");
+            element.classList.remove("show");
+            element.classList.add("hide");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sign_fortune">
+        <svg class="icon-hyperlink-2" onmouseover="show1()" onmouseout="hide1()" >
+            <use xlink:href="icomoon (1)/symbol-defs.svg#icon-hyperlink"></use>
+        </svg>
+
+        <div class="social_media" id="social_media">
+            <a class="link link1" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.niusnews.com%2F">
+                <svg class="icon-facebook">
+                    <use xlink:href="icomoon (2)/symbol-defs.svg#icon-facebook"></use>
+                </svg>
+            </a>
+            <a class="link link2"
+                href="https://twitter.com/intent/tweet?text=%E5%A6%9E%E6%96%B0%E8%81%9E%20niusnews%EF%BD%9C%E5%A5%B3%E5%AD%A9%E7%9A%84%E5%BF%83%E5%8B%95%E7%99%BC%E7%8F%BE&url=https%3A%2F%2Fwww.niusnews.com%2F">
+                <svg class="icon-twitter">
+                    <use xlink:href="icomoon (2)/symbol-defs.svg#icon-twitter"></use>
+                </svg>
+            </a>
+            <a class="link link3"
+                href="https://access.line.me/oauth2/v2.1/login?loginState=aIKd7raWyru5avATNmOB7i&loginChannelId=1446101138&returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fscope%3Dopenid%2Bprofile%2Bfriends%2Bgroups%2Btimeline.post%2Bmessage.write%26response_type%3Dcode%26state%3D7eac5d58cb4be3dba6a15420344563%26redirect_uri%3Dhttps%253A%252F%252Fsocial-plugins.line.me%252Flineit%252FloginCallback%253FreturnUrl%253Dhttps%25253A%25252F%25252Fsocial-plugins.line.me%25252Flineit%25252Fshare%25253Furl%25253Dhttps%2525253A%2525252F%2525252Fwww.niusnews.com%2525252F%26client_id%3D1446101138#/">
+                <svg class="icon-line">
+                    <use xlink:href="icomoon (2)/symbol-defs.svg#icon-line"></use>
+                </svg>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
